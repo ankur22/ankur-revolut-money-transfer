@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "acf20592-e6b2-427c-a68a-f6b6190f96c0",
+		"name": "MoneyTransfer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/v1/accounts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"Ankur\",\n\t\"otherName\": \"\",\n\t\"surname\": \"Agarwal\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/v1/accounts/000000001",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"Ankur\",\n\t\"otherName\": \"\",\n\t\"surname\": \"Agarwal\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/accounts/000000001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"accounts",
+						"000000001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/v1/accounts/000000001/money",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"Ankur\",\n\t\"otherName\": \"\",\n\t\"surname\": \"Agarwal\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/accounts/000000001/money",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"accounts",
+						"000000001",
+						"money"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/v1/accounts/000000001/money",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"amount\": 20.0,\n\t\"requestID\": \"a2s9d0as9d\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/accounts/000000001/money",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"accounts",
+						"000000001",
+						"money"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/v1/accounts/000000001/money/transfer",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"amount\": 20.0,\n\t\"requestID\": \"a2s9d0as39d\",\n\t\"to\": \"000000002\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/accounts/000000001/money/transfer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"accounts",
+						"000000001",
+						"money",
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

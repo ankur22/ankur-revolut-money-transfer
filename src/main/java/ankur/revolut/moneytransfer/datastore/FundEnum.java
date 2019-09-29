@@ -1,0 +1,14 @@
+package ankur.revolut.moneytransfer.datastore;
+
+public enum FundEnum {
+    TRANSACTION_ALREADY_COMPLETE,
+    FUND_UNDERFLOW,
+    FUND_OVERFLOW,
+    FUND_NOT_OVER_UNDER_FLOW,
+    ACCOUNT_NOT_FOUND,
+    DEST_ACCOUNT_NOT_FOUND,
+    TIMED_OUT,
+    SUCCESS,
+    ACCOUNT_PRE_CHECK_PASS,
+    SAME_ACCOUNT
+}
