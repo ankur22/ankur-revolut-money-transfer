@@ -244,6 +244,32 @@ public class AccountsControllerTest {
     }
 
     @Test
+    public void ensureMultipleAccountsCreatedWhenHitByMultipleRequests() {
+        // given
+        AccountRequest req = givenAccountRequest();
+        int numThreads = 50;
+        int numRequests = 500;
+
+        // when
+        AtomicInteger totalResponses = new AtomicInteger(0);
+        ExecutorService executor = Executors.newFixedThreadPool(numThreads);
+        IntStream.range(0, numRequests)
+                .forEach(i -> executor.submit(() -> {
+                    TestResponse res = request("POST", "/v1/accounts", req);
+                    if (res.getStatus() == 201) {
+                        totalResponses.incrementAndGet();
+                    } else {
+                        System.out.println(String.format("%d response", res.getStatus()));
+                    }
+                }));
+
+        shutdownExecutor(executor);
+
+        // then
+        assertEquals(numRequests, totalResponses.get());
+    }
+
+    @Test
     public void ensureLocksWorkingWhenTransferringBetweenAccountsAndNoDeadLock() {
         // given
         AccountRequest req = givenAccountRequest();

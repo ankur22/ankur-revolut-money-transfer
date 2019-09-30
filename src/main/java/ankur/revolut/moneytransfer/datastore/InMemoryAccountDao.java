@@ -31,7 +31,7 @@ public class InMemoryAccountDao implements AccountDao {
     }
 
     @Override
-    public synchronized Optional<Account> addAccount(Account account) {
+    public Optional<Account> addAccount(Account account) {
         if (accountNumbers.containsKey(account.getAccountNumber())) {
             return Optional.empty();
         }
